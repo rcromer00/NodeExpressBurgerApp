@@ -1,8 +1,8 @@
 // * Import (require) `connection.js` into `orm.js`
 
 var connection = require("../config/connection.js");
-const e = require("express");
-const { query } = require("express");
+// const e = require("express");
+// const { query } = require("express");
 
 function printQuestionMarks (num) {
     var arr = [];
@@ -16,7 +16,11 @@ function printQuestionMarks (num) {
 function objToSql(ob) {
     var arr = [];
     for (var key in ob) {
+        var value = ob[key];
         if (Object.hasOwnProperty.call(ob, key)) {
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
             arr.push(key + "=" + ob[key]);
         }
     }
@@ -68,7 +72,18 @@ var orm = {
             }
             cb(result);
         });
-    }
-};
+    },
+    delete: function(table, objColVals, condition, cb) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
 
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    }
+}
 module.exports = orm;
