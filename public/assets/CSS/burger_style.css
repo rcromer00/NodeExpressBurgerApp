@@ -1,8 +1,58 @@
-h1 {
-    font-size: 24px;
-    text-align: center;
-}
+/* @import url('https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap'); */
 
 body {
-    background-color: coral;
+    background-image: url(../img/burger_img.jpg);
+    background-size: cover;
+}
+.title{
+    font-size: 40px;
+    color:white;
+    font-family: "Exo", sans-serif;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.287);
+    
+    top: 10em;  
+
+}
+#burger_nameDiv {
+    margin-top: 37em;
+    position: absolute;
+    left: 300px;
+    right: 300px;
+}
+#submitBtn {
+    position: absolute;
+    margin-top: 37em;
+    right: 200px;
+    padding: 5px;
+}
+#burgerList {
+    /* left:300px;
+    right:300px; */
+    margin-top: 10em;
+    padding-right: 20px; 
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.287);
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Exo', sans-serif;
+}
+ul {
+    display: table;
+    margin: 0 auto;
+    text-align: left;
+}
+.devour{
+    color: black;
+}
+.title-text {
+    text-align: center;
+    margin-top: 50px;
+    color:white;
+    font-size: 30px;
+    font-family: 'Exo', sans-serif;
+    background-color:  rgba(0, 0, 0, 0.287);
 }
