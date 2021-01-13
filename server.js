@@ -9,6 +9,9 @@ const app = express();
 
 app.use(express.static("public"));
 
+app.use(express.static("../img"));
+
+// app.use("/bootstrap", express.static(_dirname+"/node_modules/bootstrap/dist"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -21,4 +24,4 @@ app.use("/", routes);
 
 app.listen(PORT, () => {
     console.log("Server listening on: http://localhost:" + PORT)
-}); 
+});
